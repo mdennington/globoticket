@@ -1,7 +1,9 @@
 ﻿using System;
 using System.Linq;
 using System.Threading.Tasks;
+using GloboTicket.Messaging;
 using GloboTicket.Web.Extensions;
+using GloboTicket.Web.Messages;
 using GloboTicket.Web.Models;
 using GloboTicket.Web.Models.Api;
 using GloboTicket.Web.Models.View;
@@ -14,11 +16,13 @@ namespace GloboTicket.Web.Controllers
     {
         private readonly IShoppingBasketService basketService;
         private readonly Settings settings;
+        private readonly IMessageBus _messageBus;
 
-        public ShoppingBasketController(IShoppingBasketService basketService, Settings settings)
+        public ShoppingBasketController(IShoppingBasketService basketService, Settings settings, IMessageBus messageBus)
         {
             this.basketService = basketService;
             this.settings = settings;
+            _messageBus = messageBus;
         }
 
         public async Task<IActionResult> Index()
@@ -62,6 +66,13 @@ namespace GloboTicket.Web.Controllers
             var basketId = Request.Cookies.GetCurrentBasketId(settings);
             await basketService.RemoveLine(basketId, lineId);
             return RedirectToAction("Index");
+        }
+
+        public async Task<IActionResult> Pay()
+        {
+            var basketId = Request.Cookies.GetCurrentBasketId(settings);
+            await _messageBus.PublishMessage(new PaymentMessage{ BasketId = basketId }, "payments");
+            return View("Thanks");
         }
     }
 }

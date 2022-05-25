@@ -1,7 +1,7 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio Version 16
-VisualStudioVersion = 16.0.30128.74
+# Visual Studio Version 17
+VisualStudioVersion = 17.2.32516.85
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "GloboTicket.Web", "GloboTicket.Client\GloboTicket.Web.csproj", "{0848F9B8-B1CC-412F-9A8C-A09058575A1E}"
 EndProject
@@ -12,6 +12,14 @@ EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "GloboTicket.Services.ShoppingBasket", "GloboTicket.Services.ShoppingBasket\GloboTicket.Services.ShoppingBasket.csproj", "{CD16338F-F1A0-44F7-834E-7813F3EF63FE}"
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "GloboTicket.Services.EventCatalog", "GloboTicket.Services.EventCatalog\GloboTicket.Services.EventCatalog.csproj", "{E2C27A67-A664-4501-8045-C71F13924979}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "GloboTicket.Messages", "GloboTicket.Messages\GloboTicket.Messages.csproj", "{E4A299AD-E407-4770-B235-C212B63ED98E}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Messaging", "Messaging", "{E05EF657-4E69-441A-88F3-C1E901F23BA3}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "GloboTicket.Messaging", "GloboTicket.SBMessaging\GloboTicket.Messaging.csproj", "{ACD67E57-F74B-415E-A4D1-67B64E8E1D54}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GloboTicket.PaymentProcessorAPI", "GloboTicket.PaymentProcessorAPI\GloboTicket.PaymentProcessorAPI.csproj", "{06357FA3-A9E4-4D84-B557-5884BF8619F8}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -31,6 +39,18 @@ Global
 		{E2C27A67-A664-4501-8045-C71F13924979}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{E2C27A67-A664-4501-8045-C71F13924979}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{E2C27A67-A664-4501-8045-C71F13924979}.Release|Any CPU.Build.0 = Release|Any CPU
+		{E4A299AD-E407-4770-B235-C212B63ED98E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{E4A299AD-E407-4770-B235-C212B63ED98E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{E4A299AD-E407-4770-B235-C212B63ED98E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{E4A299AD-E407-4770-B235-C212B63ED98E}.Release|Any CPU.Build.0 = Release|Any CPU
+		{ACD67E57-F74B-415E-A4D1-67B64E8E1D54}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{ACD67E57-F74B-415E-A4D1-67B64E8E1D54}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{ACD67E57-F74B-415E-A4D1-67B64E8E1D54}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{ACD67E57-F74B-415E-A4D1-67B64E8E1D54}.Release|Any CPU.Build.0 = Release|Any CPU
+		{06357FA3-A9E4-4D84-B557-5884BF8619F8}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{06357FA3-A9E4-4D84-B557-5884BF8619F8}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{06357FA3-A9E4-4D84-B557-5884BF8619F8}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{06357FA3-A9E4-4D84-B557-5884BF8619F8}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -39,6 +59,9 @@ Global
 		{0848F9B8-B1CC-412F-9A8C-A09058575A1E} = {825D4E4F-3BFF-4546-96AB-8AB83D95722D}
 		{CD16338F-F1A0-44F7-834E-7813F3EF63FE} = {F3632F51-056C-43C5-9E59-8D371E99C8BF}
 		{E2C27A67-A664-4501-8045-C71F13924979} = {F3632F51-056C-43C5-9E59-8D371E99C8BF}
+		{E4A299AD-E407-4770-B235-C212B63ED98E} = {F3632F51-056C-43C5-9E59-8D371E99C8BF}
+		{ACD67E57-F74B-415E-A4D1-67B64E8E1D54} = {E05EF657-4E69-441A-88F3-C1E901F23BA3}
+		{06357FA3-A9E4-4D84-B557-5884BF8619F8} = {F3632F51-056C-43C5-9E59-8D371E99C8BF}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {57E1B7AE-99E6-4F8F-977C-CF0FD36BBE42}

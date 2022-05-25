@@ -1,3 +1,4 @@
+using GloboTicket.Messaging;
 using GloboTicket.Web.Models;
 using GloboTicket.Web.Services;
 using Microsoft.AspNetCore.Builder;
@@ -22,7 +23,7 @@ services.AddHttpClient<IShoppingBasketService, ShoppingBasketService>(c =>
     c.BaseAddress = new Uri(builder.Configuration["ApiConfigs:ShoppingBasket:Uri"]));
 
 services.AddSingleton<Settings>();
-
+builder.Services.AddSingleton<IMessageBus, AzureServiceBusMessageBus>();
 
 var app = builder.Build();
 
@@ -52,6 +53,4 @@ app.UseEndpoints(endpoints =>
 });
 
 //app.MapControllers();
-
-
 app.Run();
